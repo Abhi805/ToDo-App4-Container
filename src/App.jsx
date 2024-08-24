@@ -1,6 +1,6 @@
 import React from 'react'
 import TodoInput from './components/TodoInput'
-import TodoList from './components/TodoList'
+
 
 const App = () => {
 
@@ -17,9 +17,7 @@ const App = () => {
    
 
 
-  <div className=' flex justify-center p-2'>
-  <button className='text-xl text-white hover:bg-slate-900 rounded-md p-1'><span>CHECK LIST</span></button>
-  </div>
+
       </div>
     
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import TodoList from './TodoList';
+
 
 const TodoInput = () => {
 
@@ -13,6 +13,19 @@ const addTodo =()=>{
   setInputText('');
 }
 
+const deleteTodo =(id)=>{
+
+  const updateData = todo.filter((element,index)=>{
+    return index!==id;
+  
+  });
+  setTodo(updateData);
+
+}
+
+const removeAll=()=>{
+  setTodo([]);
+}
   return (
    <>
     <div className="input-container font-serif justify-center flex">
@@ -42,10 +55,10 @@ const addTodo =()=>{
     {
       todo.map((element,index)=>{
         return(
-          <ul className="list-none font-serif border-2  border-slate-600 mt-4 ml-8 bg-neutral-300 rounded-md w-80 h-8 text-lg">
+          <ul key={index} className="list-none font-serif border-2 hover:border-gray-950 border-slate-600 mt-4 ml-8 bg-neutral-300 rounded-md w-80 h-8 text-lg">
     <li className='ml-2 capitalize'>
    {element}
-    <span  className='float-right  mr-2 cursor-pointer hover:text-xl'><i class="fa-solid fa-trash-can icon-delete"></i></span>
+    <span  className='float-right  mr-2 cursor-pointer hover:text-xl'><i onClick={()=>deleteTodo(index)} className="fa-solid fa-trash-can icon-delete" ></i></span>
     </li>
   </ul>
         )
@@ -55,6 +68,9 @@ const addTodo =()=>{
 
 
 
+  </div>
+  <div className=' flex justify-center p-2'>
+  <button onClick={removeAll} className='text-xl text-white hover:bg-slate-900 rounded-md p-1'><span>Remove All</span></button>
   </div>
 
    </>
