@@ -1,5 +1,6 @@
 import React from 'react'
 import TodoInput from './components/TodoInput'
+import TodoList from './components/TodoList'
 
 const App = () => {
   return (
@@ -9,15 +10,13 @@ const App = () => {
       <TodoInput />
       <h1 className="m-4 ml-10 text-xl">TODOS</h1>
       < hr/>
+    <TodoList />
 
-
-      <ul className="list-none font-serif border-2  border-slate-600 mt-4 ml-8 bg-neutral-300 rounded-md w-80 h-8 text-lg">
-      <li className='ml-2 capitalize'>
-        <span  className='float-right  mr-2 cursor-pointer hover:text-xl'><i class="fa-solid fa-trash-can icon-delete" title='Delete'></i></span>
-      </li>
-    </ul>
+  <div className=' flex justify-center p-2'>
+  <button className='text-xl text-white hover:bg-slate-900 rounded-md p-1'><span>CHECK LIST</span></button>
+  </div>
       </div>
-
+    
     </div>
   )
 }
