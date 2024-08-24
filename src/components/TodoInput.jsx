@@ -11,7 +11,7 @@ const TodoInput = () => {
         />
          <button
       
-      className="bg-orange-600 font-semibold  hover:bg-slate-950 ml-2 rounded-md px-2 text-white ">
+     className="bg-orange-600 font-semibold  hover:bg-slate-950 ml-2 rounded-md px-2 text-white ">
     
       Add
     </button>
